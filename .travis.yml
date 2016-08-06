@@ -28,6 +28,7 @@ android:
     - platform-tools
     - tools
     - build-tools-24.0.1
+    - android-24
     - extra-android-m2repository
 
 script:
