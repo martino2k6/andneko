@@ -30,8 +30,8 @@ limitations under the License.
     
     <string name="settings_enabled">enabled</string>
     <string name="settings_enabled_title">@string/enabled</string>
-    <string name="settings_enabled_summary_on">@string/enable_aneko</string>
-    <string name="settings_enabled_summary_off">@string/disable_aneko</string>
+    <string name="settings_enabled_summary_on">@string/disable_aneko</string>
+    <string name="settings_enabled_summary_off">@string/enable_aneko</string>
     
     <string name="settings_permissions">permissions</string>
     <string name="settings_permissions_title">@string/permissions</string>
