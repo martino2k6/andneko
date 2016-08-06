@@ -32,7 +32,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 24
         
-        versionCode genVersionCode(versions)
+        versionCode genVersionCode()
         versionName genVersionName(versions)
         
         archivesBaseName = "${app.replace(' ', '_')}-${versionName}"
@@ -94,19 +94,10 @@ tasks.whenTaskAdded {
 
 // utils
 
-def genVersionCode(Properties props) {
-    def major = Integer.parseInt(props['major'])
-    def minor = Integer.parseInt(props['minor'])
-    def patch = Integer.parseInt(props['patch'])
-    def build = Integer.parseInt(System.getenv('BUILD_NUMBER') ?: '0')
-    
-    if (major > 213 || minor > 100 || patch > 100 || build > 1000) {
-        throw new GradleException('version code will overflow');
-    }
-    
-    return (major * 10000000 + minor * 100000 + patch * 1000 + build);
+def genVersionCode() {
+    return Integer.parseInt(System.getenv('TRAVIS_BUILD_NUMBER') ?: '0')
 }
 
 def genVersionName(Properties props) {
-    return "${props['major']}.${props['minor']}.${props['patch']}.${System.getenv('BUILD_NUMBER') ?: '0'}"
+    return "${props['major']}.${props['minor']}.${props['patch']}.${System.getenv('TRAVIS_BUILD_NUMBER') ?: '0'}"
 }
