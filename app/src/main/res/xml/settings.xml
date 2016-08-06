@@ -16,7 +16,6 @@ limitations under the License.
 !-->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    
     <CheckBoxPreference
         android:key="@string/settings_enabled"
         android:title="@string/settings_enabled_title"
