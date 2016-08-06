@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (c) 2016 Martin Bella. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+!-->
+
+<!-- non-translatable strings and aliases for literal translatable strings -->
+<resources>
+    <!-- generic -->
+    
+    <string name="app_name">@string/aneko</string>
+    <string name="accessibility_description">@string/aneko_requires_to</string>
+
+    <!-- activity titles -->
+    
+    <string name="title_home">@string/app_name</string>
+    
+    <!-- settings -->
+    
+    <string name="settings_enabled">enabled</string>
+    <string name="settings_enabled_title">@string/enabled</string>
+    <string name="settings_enabled_summary_on">@string/enable_aneko</string>
+    <string name="settings_enabled_summary_off">@string/disable_aneko</string>
+    
+    <string name="settings_permissions">permissions</string>
+    <string name="settings_permissions_title">@string/permissions</string>
+    <string name="settings_permissions_summary_on">@string/permissions_for_aneko</string>
+    <string name="settings_permissions_summary_off">@string/permissions_are_required</string>
+    
+    <string name="settings_screenmate">screenmate</string>
+    <string name="settings_screenmate_title">@string/screenmate</string>
+    <string name="settings_screenmate_summary">@string/change_the_screenmate</string>
+    
+    <string name="settings_size">size</string>
+    <string name="settings_size_title">@string/size</string>
+    <string name="settings_size_summary">@string/change_the_size</string>
+    <string name="settings_size_default">96</string>
+    
+    <string name="settings_movement_frequency">movement_frequency</string>
+    <string name="settings_movement_frequency_title">@string/movement_frequency</string>
+    <string name="settings_movement_frequency_message">@string/change_how_fast</string>
+    <string name="settings_movement_frequency_default">25</string>
+    
+    <string name="settings_movement_granularity">movement_granularity</string>
+    <string name="settings_movement_granularity_title">@string/movement_granularity</string>
+    <string name="settings_movement_granularity_message">@string/change_how_smooth</string>
+    <string name="settings_movement_granularity_default">2</string>
+    
+    <string name="settings_sleep_delay">sleep_delay</string>
+    <string name="settings_sleep_delay_title">@string/sleep_delay</string>
+    <string name="settings_sleep_delay_message">@string/change_how_long</string>
+    <string name="settings_sleep_delay_dialog_title">@string/sleep_delay_in</string>
+    <string name="settings_sleep_delay_default">5</string>
+    
+    <!-- notifications -->
+    
+    <string name="notification_permissions_title">@string/missing_permissions</string>
+    <string name="notification_permissions_content">@string/permissions_need_to</string>
+    
+    <!-- items -->
+    
+    <string name="screenmate_bsd">@string/bsd</string>
+    <string name="screenmate_dog">@string/dog</string>
+    <string name="screenmate_neko">@string/neko</string>
+    <string name="screenmate_sakura">@string/sakura</string>
+    <string name="screenmate_tomoyo">@string/tomoyo</string>
+    <string name="screenmate_tora">@string/tora</string>
+
+    <!-- content descriptions -->
+</resources>

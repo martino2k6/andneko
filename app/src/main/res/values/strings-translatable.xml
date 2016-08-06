@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (c) 2016 Martin Bella. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+!-->
+
+<!-- translatable literal strings -->
+<resources>
+    <string name="aneko">Aneko</string>
+    <string name="aneko_requires_to">Aneko requires to inspect the elements on the screen in order to figure out the position where the screenmate should run to.</string>
+    
+    <string name="big">Big</string>
+    <string name="biggest">Biggest</string>
+    <string name="bsd">BSD</string>
+    
+    <string name="change_how_long">Change how many seconds before the screenmate goes to sleep.</string>
+    <string name="change_how_fast">Change how fast the position of the screenmate gets updated. Higher values will drain the battery faster.</string>
+    <string name="change_the_size">Change the size of the screenmate on the screen.</string>
+    <string name="change_how_smooth">Change how smooth the movement of the screenmate will be. Higher values will increase the smoothness, at the cost of increased memory consumption.</string>
+    <string name="change_the_screenmate">Change the screenmate which will be chasing you on the screen.</string>
+    
+    <string name="disable_aneko">Disable Aneko.</string>
+    <string name="dog">Dog</string>
+
+    <string name="enabled">Enabled</string>
+    <string name="enable_aneko">Enable Aneko.</string>
+    
+    <string name="fast">Fast</string>
+    
+    <string name="high">High</string>
+    
+    <string name="low">Low</string>
+    
+    <string name="medium">Medium</string>
+    <string name="missing_permissions">Missing permissions</string>
+    <string name="movement_frequency">Movement frequency</string>
+    <string name="movement_granularity">Movement granularity</string>
+    
+    <string name="neko">Neko</string>
+    <string name="not_applicable_for">Not applicable for this version of Android.</string>
+    
+    <string name="permissions">Permissions</string>
+    <string name="permissions_are_required">Permissions are required for Aneko to draw on the screen. Tap on this preference to open the permission settings and grant them.</string>
+    <string name="permissions_for_aneko">Permissions for Aneko have been granted.</string>
+    <string name="permissions_need_to">Permissions need to be granted in order for Aneko to draw on the screen.</string>
+    
+    <string name="sakura">Sakura</string>
+    <string name="size">Size</string>
+    <string name="screenmate">Screenmate</string>
+    <string name="sleep_delay">Sleep delay</string>
+    <string name="sleep_delay_in">Sleep delay in seconds</string>
+    <string name="slow">Slow</string>
+    <string name="small">Small</string>
+    <string name="smallest">Smallest</string>
+    
+    <string name="tomoyo">Tomoyo</string>
+    <string name="tora">Tora</string>
+</resources>

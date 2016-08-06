@@ -1,0 +1,120 @@
+/*
+ * Copyright (c) 2016 Martin Bella. All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+def app = "Aneko"
+def versions = new Properties();
+versions.load(file("${project.rootDir}/version.properties").newDataInputStream())
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '24.0.1'
+    
+    defaultConfig {
+        applicationId 'net.orange_box.aneko'
+        
+        minSdkVersion 15
+        targetSdkVersion 24
+        
+        versionCode genVersionCode(versions)
+        versionName genVersionName(versions)
+        
+        archivesBaseName = "${app.replace(' ', '_')}-${versionName}"
+    }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    
+    sourceSets {
+        main {
+            java.srcDirs += 'src/main/kotlin'
+        }
+    }
+    
+    signingConfigs {
+        release.initWith(debug)
+    }
+    
+    buildTypes {
+        debug {
+            ext.enableCrashlytics = false
+        }
+        
+        release {
+            minifyEnabled true
+            proguardFiles 'proguard.cfg'
+            
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    compile "com.android.support:appcompat-v7:$versionSupport"
+    compile "com.android.support:support-annotations:$versionSupport"
+    compile('com.crashlytics.sdk.android:crashlytics:2.6.1@aar') {
+        transitive = true;
+    }
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$versionKotlin"
+}
+
+// tasks
+
+task signingConfig << {
+    def k = project.hasProperty('keystore') ? keystore : System.getenv('release_keystore')
+    def a = project.hasProperty('alias') ? alias : System.getenv('release_alias')
+    def p = project.hasProperty('password') ? password : System.getenv('release_password')
+    
+    if (k != null && a != null && p != null) {
+        android.signingConfigs.release.storeFile = file("${project.rootDir}/release.keystore")
+        android.signingConfigs.release.storePassword = k
+        android.signingConfigs.release.keyAlias = a
+        android.signingConfigs.release.keyPassword = p
+    } else {
+        logger.warn('Signing APK with debug key')
+    }
+}
+
+tasks.whenTaskAdded {
+    if (it.name.equals('packageRelease')) {
+        it.dependsOn 'signingConfig'
+    }
+}
+
+// utils
+
+def genVersionCode(Properties props) {
+    def major = Integer.parseInt(props['major'])
+    def minor = Integer.parseInt(props['minor'])
+    def patch = Integer.parseInt(props['patch'])
+    def build = Integer.parseInt(System.getenv('BUILD_NUMBER') ?: '0')
+    
+    if (major > 213 || minor > 100 || patch > 100 || build > 1000) {
+        throw new GradleException('version code will overflow');
+    }
+    
+    return (major * 10000000 + minor * 100000 + patch * 1000 + build);
+}
+
+def genVersionName(Properties props) {
+    return "${props['major']}.${props['minor']}.${props['patch']}.${System.getenv('BUILD_NUMBER') ?: '0'}"
+}
