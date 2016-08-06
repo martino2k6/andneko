@@ -72,15 +72,15 @@ dependencies {
 // tasks
 
 task signingConfig << {
-    def k = project.hasProperty('keystore') ? keystore : System.getenv('release_keystore')
-    def a = project.hasProperty('alias') ? alias : System.getenv('release_alias')
-    def p = project.hasProperty('password') ? password : System.getenv('release_password')
+    def kpass = project.hasProperty('keystore') ? keystorePass : System.getenv('KEYSTORE_PASS')
+    def aname = project.hasProperty('alias') ? aliasName : System.getenv('ALIAS_NAME')
+    def apass = project.hasProperty('password') ? aliasPass : System.getenv('ALIAS_PASS')
     
-    if (k != null && a != null && p != null) {
+    if (kpass != null && aname != null && apass != null) {
         android.signingConfigs.release.storeFile = file("${project.rootDir}/release.keystore")
-        android.signingConfigs.release.storePassword = k
-        android.signingConfigs.release.keyAlias = a
-        android.signingConfigs.release.keyPassword = p
+        android.signingConfigs.release.storePassword = kpass
+        android.signingConfigs.release.keyAlias = aname
+        android.signingConfigs.release.keyPassword = apass
     } else {
         logger.warn('Signing APK with debug key')
     }
