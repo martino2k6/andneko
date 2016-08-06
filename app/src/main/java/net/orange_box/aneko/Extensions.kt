@@ -23,7 +23,6 @@ import android.os.Handler
 import android.os.SystemClock
 import android.util.DisplayMetrics
 import android.util.Log
-import com.crashlytics.android.Crashlytics
 import java.util.*
 import java.util.concurrent.CountDownLatch
 
@@ -73,7 +72,3 @@ fun Int.dpToPx() = this / (Resources.getSystem().displayMetrics.densityDpi / Dis
 // List
 
 fun <T> List<T>.random() = get(Random().nextInt(count()))
-
-// Throwable
-
-fun Throwable.report() = Crashlytics.logException(this)

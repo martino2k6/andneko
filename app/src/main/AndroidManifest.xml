@@ -25,7 +25,6 @@ limitations under the License.
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     
     <application
-        android:name=".App"
         android:icon="@android:drawable/sym_def_app_icon"
         android:label="@string/app_name"
         android:theme="@style/Theme.App"
@@ -57,10 +56,5 @@ limitations under the License.
                 android:name="android.accessibilityservice"
                 android:resource="@xml/accessibility"/>
         </service>
-        
-        <!-- meta data -->
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="21f9f46f78a324e69cd7ae91127f7afc7e4b40b9"/>
     </application>
 </manifest>
