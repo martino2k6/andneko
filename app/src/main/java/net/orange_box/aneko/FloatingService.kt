@@ -178,7 +178,7 @@ class FloatingService :
         getService<NotificationManager>(Context.NOTIFICATION_SERVICE).notify(
                 0,
                 NotificationCompat.Builder(this)
-                        .setSmallIcon(android.R.drawable.sym_def_app_icon)
+                        .setSmallIcon(R.drawable.awake_neko)
                         .setWhen(Date().time)
                         .setContentTitle(getString(R.string.notification_permissions_title))
                         .setContentText(getString(R.string.notification_permissions_content))
