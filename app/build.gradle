@@ -72,9 +72,9 @@ dependencies {
 // tasks
 
 task signingConfig << {
-    def kpass = project.hasProperty('keystore') ? keystorePass : System.getenv('KEYSTORE_PASS')
-    def aname = project.hasProperty('alias') ? aliasName : System.getenv('ALIAS_NAME')
-    def apass = project.hasProperty('password') ? aliasPass : System.getenv('ALIAS_PASS')
+    def kpass = project.hasProperty('keystorePass') ? keystorePass : System.getenv('KEYSTORE_PASS')
+    def aname = project.hasProperty('aliasName') ? aliasName : System.getenv('ALIAS_NAME')
+    def apass = project.hasProperty('aliasPass') ? aliasPass : System.getenv('ALIAS_PASS')
     
     if (kpass != null && aname != null && apass != null) {
         android.signingConfigs.release.storeFile = file("${project.rootDir}/release.keystore")
