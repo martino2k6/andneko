@@ -61,6 +61,11 @@ android {
             signingConfig signingConfigs.release
         }
     }
+    
+    // workaround for #1
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
