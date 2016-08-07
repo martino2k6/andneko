@@ -15,6 +15,7 @@
  */
 
 apply plugin: 'com.android.application'
+apply plugin: 'com.github.triplet.play'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
@@ -72,6 +73,11 @@ dependencies {
     compile "com.android.support:appcompat-v7:$versionSupport"
     compile "com.android.support:support-annotations:$versionSupport"
     compile "org.jetbrains.kotlin:kotlin-stdlib:$versionKotlin"
+}
+
+play {
+    jsonFile = file("${project.rootDir}/play.json")
+    track = 'alpha'
 }
 
 // tasks

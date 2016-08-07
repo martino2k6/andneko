@@ -33,9 +33,10 @@ android:
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_4ebea5e274f7_key -iv $encrypted_4ebea5e274f7_iv -in release.keystore.enc -out release.keystore -d
+  - openssl aes-256-cbc -K $encrypted_4ebea5e274f7_key -iv $encrypted_4ebea5e274f7_iv -in play.json.enc -out play.json -d
   
 script:
-  - "./gradlew build check"
+  - "travis/script.sh"
 
 deploy:
   provider: releases
