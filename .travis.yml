@@ -17,11 +17,11 @@ jdk: oraclejdk8
 sudo: false
 
 before_cache:
-  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -f "$HOME/.gradle/caches/modules-2/modules-2.lock"
 cache:
   directories:
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
+    - "$HOME/.gradle/caches/"
+    - "$HOME/.gradle/wrapper/"
 
 android:
   components:
@@ -33,6 +33,20 @@ android:
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_4ebea5e274f7_key -iv $encrypted_4ebea5e274f7_iv -in release.keystore.enc -out release.keystore -d
-
+  
 script:
-  - ./gradlew build
+  - "./gradlew build check"
+
+deploy:
+  provider: releases
+  api_key:
+    secure: Y/0slou0THCqA9lQ6G7M4HbkVW+EI4ZQmfBcm3Mv+NGwSSmdFUWR9VsmHmScp2d4pxwRIm1wcAKMma7ApGDUxDx22qh1OCkN8u7hiahCjoBNWK5YL62Q0Kn6DoFJkVVGKAegVbRq3199n16jG3Z2z6Gz++NBXwwyAR2eRk8o5utVnSX1IKnfAqEJEkjxqaAjRh8hAC7B8ZSNysNdRE7bvTfBgzwpb2XUXXZLsvLuMQ1NFTmZ75BBEi/IJjtoViaTOn0UsaeA7SAY2DC6TGUOnE2F5b3uYPNgqgk57QTBzM5Zt4ETlxkz8V8tYhz4A2Azyql5aDemUDfCDFiu2umUkBrYll5km3viRhE2OExtnsyWhSX6tExObhb7z3Cw8MjumN+7LKh6wVPadCot1E9qpTd7UjPlGmyviFLlRcTAAK/3zEvJQjg1cd7mxdRlWvDzZM2pMGPtJDljV4342mARYqP3rvTCRn/0/d3i/9pZDZLujQVcqVBC1qLQkn5ssPCygyelX8CDcfBT6dpw1yfqIl9VlmtteNzqTBsWBJ5Sc4g0rYQEhxdgRraWYxeOE+63UEmJb42R3URGmXgiRe9Bv9I2R37qrhTRp2MeK3M/nUb2Bt1MtQWYsFTWt4KfWrJNBJGGo/Y7TZs/+km5mCxSYJkx/q34ZFYMAa/UfV7nF+U=
+  file_glob: true
+  file:
+    - "app/build/outputs/apk/Aneko-*-release.apk"
+    - "app/build/outputs/lint-results-debug.xml"
+    - "app/build/outputs/mapping/mapping.txt"
+  skip_cleanup: true
+  on:
+    repo: martino2k6/aneko
+    branch: master
