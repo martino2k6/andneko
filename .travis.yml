@@ -45,7 +45,7 @@ deploy:
   file:
     - "app/build/outputs/apk/Aneko-*-release.apk"
     - "app/build/outputs/lint-results-debug.xml"
-    - "app/build/outputs/mapping/mapping.txt"
+    - "app/build/outputs/mapping/release/mapping.txt"
   skip_cleanup: true
   on:
     repo: martino2k6/aneko
