@@ -75,17 +75,12 @@ class SettingsFragment : PreferenceFragment() {
                 .getEnabledAccessibilityServiceList(AccessibilityEvent.TYPES_ALL_MASK)
                 .firstOrNull { it.id.endsWith(FloatingService::class.java.simpleName) } != null
         
-        if (api23plus()) {
-            if (Settings.canDrawOverlays(activity)) {
-                permissions.isChecked = true
-                permissions.isEnabled = false
-            } else {
-                permissions.isChecked = false
-                permissions.isEnabled = true
-            }
-        } else {
+        if (SettingsCompat.canDrawOverlays(activity)) {
             permissions.isChecked = true
             permissions.isEnabled = false
+        } else {
+            permissions.isChecked = false
+            permissions.isEnabled = true
         }
     }
 }

@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package net.orange_box.aneko
 
 import android.accessibilityservice.AccessibilityService
@@ -43,7 +42,7 @@ class FloatingService :
         SharedPreferences.OnSharedPreferenceChangeListener {
     
     private val allowed: Boolean
-        get() = if (api23plus()) Settings.canDrawOverlays(this) else true
+        get() = SettingsCompat.canDrawOverlays(this)
     
     private val updater = Executors.newSingleThreadScheduledExecutor()
     private val handler = Handler()
@@ -178,7 +177,7 @@ class FloatingService :
         getService<NotificationManager>(Context.NOTIFICATION_SERVICE).notify(
                 0,
                 NotificationCompat.Builder(this)
-                        .setSmallIcon(R.drawable.awake_neko)
+                        .setSmallIcon(android.R.drawable.sym_def_app_icon)
                         .setWhen(Date().time)
                         .setContentTitle(getString(R.string.notification_permissions_title))
                         .setContentText(getString(R.string.notification_permissions_content))
