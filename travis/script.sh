@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then
-  ./gradlew build check publishApkRelease
+  ./gradlew build check publishRelease
 else
   ./gradlew build check
 fi

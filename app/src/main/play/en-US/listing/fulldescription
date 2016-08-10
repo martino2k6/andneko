@@ -1,0 +1,5 @@
+Aneko is an adaptation of the popular cross-platform and open-source Neko program, which chases you around.
+
+Aneko will act as an accessibility service, watching for items being tapped on the screen and running towards them. How the screenmate looks, runs, and acts can all be customized in the settings.
+
+The app is distributed under the Apache 2.0 License and the source can be found at https://github.com/martino2k6/aneko. Original credits go to its original creator, Kenji Gotoh, and everyone else that contributed to Neko since its inception.

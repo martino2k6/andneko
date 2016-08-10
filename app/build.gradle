@@ -78,6 +78,7 @@ dependencies {
 play {
     jsonFile = file("${project.rootDir}/play.json")
     track = 'alpha'
+    uploadImages = true
 }
 
 // tasks
