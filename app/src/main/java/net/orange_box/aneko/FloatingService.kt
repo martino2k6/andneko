@@ -47,11 +47,12 @@ class FloatingService :
     private val updater = Executors.newSingleThreadScheduledExecutor()
     private val handler = Handler()
     
-    private val current by lazy { Point(displayWidth / 2, displayHeight / 2) }
+    private val current by lazy { Point(display.x / 2, display.y / 2) }
     private val last by lazy { Point(current) }
     
-    private val displayWidth by lazy { resources.displayMetrics.widthPixels }
-    private val displayHeight by lazy { resources.displayMetrics.heightPixels }
+    private val display by lazy { with(resources.displayMetrics) {
+        Point(widthPixels, heightPixels)
+    }}
     
     private val manager by lazy { getService<WindowManager>(WINDOW_SERVICE) }
     private val view by lazy { WindowView(this) }
@@ -123,7 +124,16 @@ class FloatingService :
         
         with(Rect()) {
             info.getBoundsInScreen(this)
-            last.set(centerX(), top - view.height)
+            
+            // find best place to anchor to avoid going outside
+            val x = if (centerX() >= view.width / 2 && centerX() <= display.x - view.width / 2) centerX()
+                    else if (centerX() > display.x - view.width / 2) left
+                    else right
+            val y = if (top - view.height >= view.height && bottom + view.height >= display.y) centerY()
+                    else if (top - view.height >= view.height) top - view.height
+                    else bottom
+            
+            last.set(x, y)
         }
         
         info.recycle()
@@ -264,7 +274,7 @@ class FloatingService :
         private val finder = PathFinder(
                 PathGraph(
                         0, 0,
-                        displayWidth, displayHeight,
+                        display.x, display.y,
                         prefs.movementGranularity),
                 PathLocation(current.x, current.y),
                 PathLocation(last.x, last.y))
@@ -287,8 +297,8 @@ class FloatingService :
                     manager.updateViewLayout(
                             view,
                             with(view.layoutParams as WindowManager.LayoutParams) {
-                                x = next.x - displayWidth / 2
-                                y = next.y - displayHeight / 2
+                                x = next.x - display.x / 2
+                                y = next.y - display.y / 2
                                 current.set(next.x, next.y)
                                 this
                             })
