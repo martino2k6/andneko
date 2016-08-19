@@ -11,7 +11,7 @@ local.properties
 # OSX
 .DS_Store
 
-# Aneko
+# AndNeko
 play.json
 release.keystore
 secrets.tar

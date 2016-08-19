@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.orange_box.aneko
+package net.orange_box.andneko
 
 import android.content.Context
 import android.content.res.Resources

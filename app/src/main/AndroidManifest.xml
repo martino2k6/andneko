@@ -17,7 +17,7 @@ limitations under the License.
 
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.orange_box.aneko">
+    package="net.orange_box.andneko">
     
     <!-- permissions -->
     <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"/>
@@ -25,7 +25,7 @@ limitations under the License.
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     
     <application
-        android:icon="@drawable/awake_neko"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.App"
         android:allowBackup="true"
@@ -33,7 +33,7 @@ limitations under the License.
         
         <!-- activities -->
         <activity
-            android:name=".HomeActivity"
+            android:name="net.orange_box.andneko.HomeActivity"
             android:label="@string/title_home">
             
             <intent-filter>
@@ -44,7 +44,7 @@ limitations under the License.
         
         <!-- services -->
         <service
-            android:name=".FloatingService"
+            android:name="net.orange_box.andneko.FloatingService"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             

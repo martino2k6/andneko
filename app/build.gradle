@@ -19,7 +19,7 @@ apply plugin: 'com.github.triplet.play'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
-def app = "Aneko"
+def app = "AndNeko"
 def versions = new Properties();
 versions.load(file("${project.rootDir}/version.properties").newDataInputStream())
 
@@ -28,7 +28,7 @@ android {
     buildToolsVersion '24.0.1'
     
     defaultConfig {
-        applicationId 'net.orange_box.aneko'
+        applicationId 'net.orange_box.andneko'
         
         minSdkVersion 15
         targetSdkVersion 24

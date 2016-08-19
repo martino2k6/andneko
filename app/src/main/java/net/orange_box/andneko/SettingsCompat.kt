@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-package net.orange_box.aneko
+package net.orange_box.andneko
 
-import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_home.*
+import android.annotation.TargetApi
+import android.content.Context
+import android.os.Build
+import android.provider.Settings
 
-class HomeActivity : AppCompatActivity() {
+internal object SettingsCompat {
     
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        
-        setContentView(R.layout.activity_home)
-        
-        fragmentManager.beginTransaction()
-                .add(   home_root.id,
-                        SettingsFragment(),
-                        SettingsFragment::class.java.simpleName)
-                .commit()
+    fun canDrawOverlays(context: Context): Boolean {
+        return if (api23plus()) canDrawOverlaysApi23(context)
+        else true
+    }
+    
+    @TargetApi(Build.VERSION_CODES.M)
+    private fun canDrawOverlaysApi23(context: Context): Boolean {
+        return Settings.canDrawOverlays(context)
     }
 }

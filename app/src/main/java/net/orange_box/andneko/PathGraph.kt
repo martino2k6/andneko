@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.orange_box.aneko
+package net.orange_box.andneko
 
 internal class PathGraph(
         private val left: Int,

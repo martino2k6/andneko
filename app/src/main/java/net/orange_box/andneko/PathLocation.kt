@@ -14,22 +14,6 @@
  * limitations under the License.
  */
 
-package net.orange_box.aneko
+package net.orange_box.andneko
 
-import android.annotation.TargetApi
-import android.content.Context
-import android.os.Build
-import android.provider.Settings
-
-internal object SettingsCompat {
-    
-    fun canDrawOverlays(context: Context): Boolean {
-        return if (api23plus()) canDrawOverlaysApi23(context)
-        else true
-    }
-    
-    @TargetApi(Build.VERSION_CODES.M)
-    private fun canDrawOverlaysApi23(context: Context): Boolean {
-        return Settings.canDrawOverlays(context)
-    }
-}
+internal data class PathLocation(val x: Int, val y: Int)

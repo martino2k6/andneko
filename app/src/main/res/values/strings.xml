@@ -19,8 +19,8 @@ limitations under the License.
 <resources>
     <!-- generic -->
     
-    <string name="app_name">@string/aneko</string>
-    <string name="accessibility_description">@string/aneko_requires_to</string>
+    <string name="app_name">@string/andneko</string>
+    <string name="accessibility_description">@string/andneko_requires_to</string>
 
     <!-- activity titles -->
     
@@ -30,12 +30,12 @@ limitations under the License.
     
     <string name="settings_enabled">enabled</string>
     <string name="settings_enabled_title">@string/enabled</string>
-    <string name="settings_enabled_summary_on">@string/disable_aneko</string>
-    <string name="settings_enabled_summary_off">@string/enable_aneko</string>
+    <string name="settings_enabled_summary_on">@string/disable_andneko</string>
+    <string name="settings_enabled_summary_off">@string/enable_andneko</string>
     
     <string name="settings_permissions">permissions</string>
     <string name="settings_permissions_title">@string/permissions</string>
-    <string name="settings_permissions_summary_on">@string/permissions_for_aneko</string>
+    <string name="settings_permissions_summary_on">@string/permissions_for_andneko</string>
     <string name="settings_permissions_summary_off">@string/permissions_are_required</string>
     
     <string name="settings_screenmate">screenmate</string>

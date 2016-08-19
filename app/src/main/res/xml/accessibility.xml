@@ -20,5 +20,5 @@ limitations under the License.
     android:description="@string/accessibility_description"
     android:accessibilityEventTypes="typeAllMask"
     android:accessibilityFeedbackType="feedbackVisual"
-    android:settingsActivity="net.orange_box.aneko.HomeActivity"
+    android:settingsActivity="net.orange_box.andneko.HomeActivity"
     android:canRetrieveWindowContent="true"/>

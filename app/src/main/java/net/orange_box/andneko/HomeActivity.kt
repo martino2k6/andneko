@@ -14,6 +14,23 @@
  * limitations under the License.
  */
 
-package net.orange_box.aneko
+package net.orange_box.andneko
 
-internal data class PathLocation(val x: Int, val y: Int)
+import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_home.*
+
+class HomeActivity : AppCompatActivity() {
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        
+        setContentView(R.layout.activity_home)
+        
+        fragmentManager.beginTransaction()
+                .add(   home_root.id,
+                        SettingsFragment(),
+                        SettingsFragment::class.java.simpleName)
+                .commit()
+    }
+}

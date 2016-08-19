@@ -17,8 +17,8 @@ limitations under the License.
 
 <!-- translatable literal strings -->
 <resources>
-    <string name="aneko">Aneko</string>
-    <string name="aneko_requires_to">Aneko requires to inspect the elements on the screen in order to figure out the position where the screenmate should run to.</string>
+    <string name="andneko">AndNeko</string>
+    <string name="andneko_requires_to">AndNeko requires to inspect the elements on the screen in order to figure out the position where the screenmate should run to.</string>
     
     <string name="big">Big</string>
     <string name="biggest">Biggest</string>
@@ -30,11 +30,11 @@ limitations under the License.
     <string name="change_how_smooth">Change how smooth the movement of the screenmate will be. Higher values will increase the smoothness, at the cost of increased memory consumption.</string>
     <string name="change_the_screenmate">Change the screenmate which will be chasing you on the screen.</string>
     
-    <string name="disable_aneko">Disable Aneko.</string>
+    <string name="disable_andneko">Disable AndNeko.</string>
     <string name="dog">Dog</string>
 
     <string name="enabled">Enabled</string>
-    <string name="enable_aneko">Enable Aneko.</string>
+    <string name="enable_andneko">Enable AndNeko.</string>
     
     <string name="fast">Fast</string>
     
@@ -51,9 +51,9 @@ limitations under the License.
     <string name="not_applicable_for">Not applicable for this version of Android.</string>
     
     <string name="permissions">Permissions</string>
-    <string name="permissions_are_required">Permissions are required for Aneko to draw on the screen. Tap on this preference to open the permission settings and grant them.</string>
-    <string name="permissions_for_aneko">Permissions for Aneko have been granted.</string>
-    <string name="permissions_need_to">Permissions need to be granted in order for Aneko to draw on the screen.</string>
+    <string name="permissions_are_required">Permissions are required for AndNeko to draw on the screen. Tap on this preference to open the permission settings and grant them.</string>
+    <string name="permissions_for_andneko">Permissions for AndNeko have been granted.</string>
+    <string name="permissions_need_to">Permissions need to be granted in order for AndNeko to draw on the screen.</string>
     
     <string name="sakura">Sakura</string>
     <string name="size">Size</string>

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.orange_box.aneko
+package net.orange_box.andneko
 
 import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.AccessibilityServiceInfo
@@ -187,7 +187,7 @@ class FloatingService :
         getService<NotificationManager>(Context.NOTIFICATION_SERVICE).notify(
                 0,
                 NotificationCompat.Builder(this)
-                        .setSmallIcon(android.R.drawable.sym_def_app_icon)
+                        .setSmallIcon(R.drawable.ic_stat_icon)
                         .setWhen(Date().time)
                         .setContentTitle(getString(R.string.notification_permissions_title))
                         .setContentText(getString(R.string.notification_permissions_content))
